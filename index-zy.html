@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zyveris Corporation</title>
+<meta name="description" content="Zyveris Corporation est un groupe technologique indépendant : intelligence artificielle, édition, développement web et services numériques.">
+<meta property="og:title" content="Zyveris Corporation">
+<meta property="og:description" content="Un groupe technologique indépendant, plusieurs activités, une même exigence.">
+<meta name="theme-color" content="#0f1530">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1530'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23a9b8ff' stroke-width='3'/%3E%3Ccircle cx='52' cy='32' r='5' fill='%23a9b8ff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1530; --bg2:#161e42; --ink:#e9ecf5; --mute:#a0a8c2;
+  --line:rgba(233,236,245,.14); --acc:#a9b8ff;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(60rem 40rem at 85% -10%,var(--bg2),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:2px}
+.wrap{width:min(72rem,100% - 3rem);margin-inline:auto}
+
+/* En-tête */
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:rgba(15,21,48,.72);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.brand{font:400 1.55rem/1 var(--serif);text-decoration:none;letter-spacing:.01em}
+.brand span{color:var(--mute);margin-left:.4rem;font-size:1.05rem}
+nav{display:flex;gap:2rem}
+nav a{text-decoration:none;color:var(--mute);font-size:.95rem;transition:color .2s}
+nav a:hover{color:var(--ink)}
+
+/* Hero */
+.hero{padding:clamp(3.5rem,9vw,7rem) 0 clamp(3rem,7vw,5.5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+h1{font:400 clamp(2.6rem,6.4vw,5rem)/1.02 var(--serif);letter-spacing:-.02em;margin:0 0 1.75rem}
+.lead{max-width:34rem;color:var(--mute);font-size:1.15rem;margin:0 0 2.25rem}
+.btn{display:inline-block;padding:.85rem 1.6rem;border:1px solid var(--acc);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:500;transition:background .25s,color .25s}
+.btn:hover{background:var(--acc);color:var(--bg)}
+.hero h1,.hero .lead,.hero .btn{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead{animation-delay:.15s}
+.hero .btn{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Orbites */
+.sky{width:100%;max-width:30rem;justify-self:end;aspect-ratio:1;animation:fade 1.6s .2s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.ring{fill:none;stroke:var(--line);stroke-width:1;transition:stroke .3s}
+.orb{transform-origin:200px 200px;animation:spin linear infinite}
+.o1{animation-duration:34s}.o2{animation-duration:52s;animation-delay:-18s}
+.o3{animation-duration:74s;animation-delay:-40s}.o4{animation-duration:98s;animation-delay:-70s}
+.dot{fill:var(--mute);transition:fill .3s,r .3s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.core{fill:url(#glow)}
+.on .ring{stroke:var(--acc)}
+.on .dot{fill:var(--acc);r:7}
+
+/* Sections */
+section{padding:clamp(3.5rem,8vw,6.5rem) 0;border-top:1px solid var(--line)}
+h2{font:400 clamp(1.9rem,3.6vw,2.7rem)/1.15 var(--serif);letter-spacing:-.01em;margin:0}
+.vision .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:3rem}
+.vision p{margin:0;font:400 clamp(1.4rem,2.6vw,1.95rem)/1.4 var(--serif);max-width:36rem}
+.vision p+p{margin-top:1.25rem;color:var(--mute)}
+
+.rows{margin-top:3rem}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:1rem 3rem;padding:2rem 0;border-top:1px solid var(--line);transition:padding-left .3s}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{padding-left:.75rem}
+.row h3{font:400 1.9rem/1.15 var(--serif);margin:0}
+.row p{margin:0;color:var(--mute);max-width:36rem}
+.tag{display:inline-block;margin-top:1rem;padding:.3rem .85rem;border:1px solid var(--line);border-radius:999px;font-size:.88rem;color:var(--ink)}
+.tag b{font-weight:600;color:var(--acc)}
+
+.contact .wrap{display:flex;flex-wrap:wrap;gap:2rem 4rem;align-items:end;justify-content:space-between}
+.contact p{margin:1rem 0 0;color:var(--mute);max-width:30rem}
+
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+
+@media (max-width:820px){
+  .hero .wrap,.vision .wrap,.row{grid-template-columns:1fr}
+  .sky{justify-self:center;max-width:20rem;order:-1}
+  nav{gap:1.25rem}
+  .brand span{display:none}
+  .row:hover{padding-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Zyveris<span>Corporation</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#vision">Vision</a>
+      <a href="#activites">Activités</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Un groupe, plusieurs activités, une même exigence.</h1>
+        <p class="lead">Zyveris Corporation est un groupe technologique indépendant. Nous construisons des activités complémentaires, de l’intelligence artificielle à l’édition, avec la volonté d’en faire une entreprise durable.</p>
+        <a class="btn" href="#activites">Découvrir nos activités</a>
+      </div>
+
+      <svg class="sky" viewBox="0 0 400 400" role="img" aria-label="Quatre orbites autour d’un point central, une par activité du groupe">
+        <defs>
+          <radialGradient id="glow">
+            <stop offset="0" stop-color="#e9ecf5"/>
+            <stop offset=".35" stop-color="#a9b8ff"/>
+            <stop offset="1" stop-color="#a9b8ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle class="core" cx="200" cy="200" r="34"/>
+        <g data-k="ai"><circle class="ring" cx="200" cy="200" r="68"/><g class="orb o1"><circle class="dot" cx="268" cy="200" r="5"/></g></g>
+        <g data-k="edit"><circle class="ring" cx="200" cy="200" r="106"/><g class="orb o2"><circle class="dot" cx="306" cy="200" r="5"/></g></g>
+        <g data-k="web"><circle class="ring" cx="200" cy="200" r="144"/><g class="orb o3"><circle class="dot" cx="344" cy="200" r="5"/></g></g>
+        <g data-k="num"><circle class="ring" cx="200" cy="200" r="182"/><g class="orb o4"><circle class="dot" cx="382" cy="200" r="5"/></g></g>
+      </svg>
+    </div>
+  </div>
+
+  <section id="vision" class="vision">
+    <div class="wrap">
+      <h2>Notre vision</h2>
+      <div>
+        <p>Réunir sous une même identité des activités indépendantes, chacune capable de vivre seule, toutes pensées pour se renforcer.</p>
+        <p>L’objectif est de bâtir une entreprise structurée, avec ses filiales et sa culture propre, ouverte le moment venu à des associés qui partagent la même exigence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="activites">
+    <div class="wrap">
+      <h2>Nos activités</h2>
+      <div class="rows">
+        <article class="row" data-k="ai">
+          <h3>Intelligence artificielle</h3>
+          <div>
+            <p>Des assistants et des outils conçus pour être utiles au quotidien, puis pour devenir des produits autonomes.</p>
+            <span class="tag"><b>Nova</b> · assistant IA, en développement</span>
+          </div>
+        </article>
+        <article class="row" data-k="edit">
+          <h3>Édition</h3>
+          <div>
+            <p>Des médias et des publications soignés, pensés pour informer et pour durer.</p>
+            <span class="tag"><b>Orbite</b> · média sur l’astronomie et l’actualité spatiale</span>
+          </div>
+        </article>
+        <article class="row" data-k="web">
+          <h3>Développement web</h3>
+          <div>
+            <p>Des interfaces claires, rapides et sobres, conçues et livrées de bout en bout.</p>
+          </div>
+        </article>
+        <article class="row" data-k="num">
+          <h3>Services numériques</h3>
+          <div>
+            <p>Mettre en place, faire évoluer et faire tourner les outils numériques dont une activité a besoin.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div>
+        <h2>Parlons-en.</h2>
+        <p>Un projet, une collaboration, l’envie de s’associer : écrivez-nous.</p>
+      </div>
+      <!-- Remplacer VOTRE_EMAIL par l'adresse de contact du groupe -->
+      <a class="btn" href="mailto:VOTRE_EMAIL">Nous écrire</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Zyveris Corporation</span>
+    <span>Groupe technologique indépendant</span>
+  </div>
+</footer>
+
+<script>
+// Survol d'une activité : l'orbite correspondante s'illumine dans le ciel du hero.
+(function () {
+  var orbits = document.querySelectorAll('.sky g[data-k]');
+  function set(k) {
+    orbits.forEach(function (g) { g.classList.toggle('on', g.dataset.k === k); });
+  }
+  document.querySelectorAll('.row').forEach(function (row) {
+    row.addEventListener('mouseenter', function () { set(row.dataset.k); });
+    row.addEventListener('mouseleave', function () { set(null); });
+  });
+})();
+</script>
+</body>
+</html>
